@@ -35,19 +35,7 @@ class MainActivity : AppCompatActivity() {
         val service: StudentController = retrofit.create(StudentController::class.java)
         get.setOnClickListener(View.OnClickListener {
             result.text=""
-            val call: Call<List<Student>> = service.get()
-            call.enqueue(object : Callback<List<Student>> {
-                override fun onResponse(call: Call<List<Student>>, response: Response<List<Student>>) {
-                    if (response.isSuccessful) {
-                        val student: List<Student>? = response.body()
-                        result.text = student?.get(0)?.firstName.toString()
-                    }
-                }
-
-                override fun onFailure(call: Call<List<Student>>, t: Throwable) {
-                    Log.d("RetrofitClient","Receive data from server problem ")
-                }
-            })
+           TODO("вставьте код решения здесь")
         })
     }
 }
